@@ -32,3 +32,34 @@ trains_info.each do |hash|
     end
 end
 puts direction_610
+
+train_name_nrt=[]
+
+trains_info.each do |hash|
+  if hash[:direction]== "north"
+    train_name_nrt << hash[:train]
+  end
+end
+puts train_name_nrt
+
+train_name_est=[]
+
+trains_info.each do |hash|
+  if hash[:direction]== "east"
+    train_name_est << hash[:train]
+  end
+end
+puts train_name_est
+
+def get_name(trains_info, direction)
+  train_name=[]
+
+  trains_info.each do |hash|
+    if hash[:direction]== direction
+      train_name << hash[:train]
+    end
+  end
+  puts train_name
+end
+
+get_name(trains_info,"north")
